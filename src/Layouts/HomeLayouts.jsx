@@ -19,13 +19,13 @@ const HomeLayouts = () => {
         </nav>
       </header>
       <main className="w-11/12 mx-auto my-5  grid grid-cols-12 gap-5">
-        <section className="left-nav col-span-3">
+        <section className="left-nav col-span-3 sticky top-0 h-fit">
           <LeftSide></LeftSide>
         </section>
         <section className="main col-span-6">
           <Outlet></Outlet>
         </section>
-        <section className="right-nav col-span-3">
+        <section className="right-nav col-span-3 sticky top-0 h-fit">
           <RightSide></RightSide>
         </section>
       </main>
