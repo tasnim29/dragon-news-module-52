@@ -2,9 +2,10 @@ import React from "react";
 import { FaEye, FaStar } from "react-icons/fa";
 import { FcShare } from "react-icons/fc";
 import { PiBookmarksFill } from "react-icons/pi";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
-  const { author, title, image_url, details, rating, total_view } = news;
+  const { id, author, title, image_url, details, rating, total_view } = news;
 
   return (
     <div className=" rounded-md p-4 shadow-xl space-y-4">
@@ -46,9 +47,12 @@ const NewsCard = ({ news }) => {
       {/* Details (shortened version) */}
       <p className="text-gray-700 text-sm">
         {details.length > 200 ? `${details.slice(0, 200)}...` : details}
-        <span className="text-orange-500 font-semibold cursor-pointer">
+        <Link
+          to={`/news-details/${id}`}
+          className="text-orange-500 font-semibold cursor-pointer"
+        >
           Read More
-        </span>
+        </Link>
       </p>
 
       {/* Footer with rating and views */}
